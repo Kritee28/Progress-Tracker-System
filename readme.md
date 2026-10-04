@@ -59,10 +59,10 @@ The project began as the C++ command-line application in [Tracker.cpp](Tracker.c
 ## Screenshots
 
 ### Dashboard
-<!-- Add dashboard screenshot here -->
+![Dashboard](image.png)
 
 ### Problem Tracker
-<!-- Add problem tracker screenshot here -->
+![Problem Tracker](image-1.png)
 
 ### Analytics
 <!-- Add analytics screenshot here -->
