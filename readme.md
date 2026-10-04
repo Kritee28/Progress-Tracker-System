@@ -1,39 +1,37 @@
-Interview Prep Tracker (C++ CLI Project)
+# Progress Tracker System
 
-This is a C++ Command-Line Interface (CLI) tool.
-Designed to help you organize and track your DSA questions while preparing for technical interviews.
+A small coding-practice tracker, evolved from my original C++ CLI project into a browser app. I built it to keep problem links, topics, difficulty, notes, and solved status together while preparing for technical interviews.
 
----
+## Run the app
 
--> Features
+Only the frontend is needed. Open PowerShell in the project folder and run:
 
--  Add new questions with title, topic, difficulty, platform, notes
-- Mark questions as solved
-- Search questions by topic
--  View all questions solved on a particular date
--  Undo last action (add/solve/delete)
-- Delete questions manually
--  See solved stats by topic and by date
+```powershell
+cd web-app/frontend
+npm.cmd install
+npm.cmd run dev
+```
 
----
+Open the local address Vite prints, usually `http://localhost:5173`. In PowerShell, use `npm.cmd` so you do not need to change the script execution policy.
 
-->How to Run
+To make a production build:
 
-1. Compile:
-   g++ Tracker.cpp -o Tracker
-   
+```powershell
+npm.cmd run build
+```
 
-2. Run:
-    ./Tracker
+## Using it
 
----
+Create an account with a unique username and password, then add problems with a title, platform, optional URL, topic, difficulty, and notes. Search, filter, edit, delete, and mark problems solved from the tracker. The overview shows counts and recent solved work. Dark mode is available in the header.
 
--> Tech Stack
+## Data and privacy
 
-- Language: C++
-- Interface: Terminal/Command-Line
-- No external libraries used
+This simplified version runs entirely in the browser. Accounts and problems are saved in the browser's local storage; passwords are hashed before saving. Usernames are unique within that browser profile. There is no AI service, backend server, or API call required. Data does not sync to another device and will be lost if browser storage is cleared, so this is intended for a local personal demo rather than production accounts.
 
----
+## Original project
 
-By Kritika :)
+The original C++ CLI implementation remains in `Tracker.cpp`; `run_tracker.bat` launches the existing Windows build. The full-stack experiment remains under `web-app/backend/` as historical project code, but the simplified browser app does not use or require it.
+
+## Stack
+
+React, Vite, Tailwind CSS, and Lucide icons. No external services or database are needed to run the browser app.

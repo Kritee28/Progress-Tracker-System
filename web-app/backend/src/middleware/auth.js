@@ -1,0 +1,3 @@
+import jwt from 'jsonwebtoken';
+import { store } from '../store.js';
+export function auth(req,res,next){const [scheme,token]=String(req.headers.authorization||'').split(' ');if(scheme!=='Bearer'||!token)return res.status(401).json({message:'Authentication required'});try{const payload=jwt.verify(token,process.env.JWT_SECRET||'local-development-secret-change-me');const user=store.users.find(u=>u.id===payload.id);if(!user)return res.status(401).json({message:'Session has expired. Please log in again.'});req.user=user;next()}catch{return res.status(401).json({message:'Session has expired. Please log in again.'})}}
