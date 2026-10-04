@@ -1,10 +1,34 @@
 # Progress Tracker System
 
-A small coding-practice tracker, evolved from my original C++ CLI project into a browser app. I built it to keep problem links, topics, difficulty, notes, and solved status together while preparing for technical interviews.
+Progress Tracker System is a React-based coding practice and progress tracking application designed to help students organize DSA problems, monitor solving consistency, and track preparation progress.
 
-## Run the app
+## Overview
 
-Only the frontend is needed. Open PowerShell in the project folder and run:
+The app runs entirely in the browser. Each user can create a local account and maintain a personal problem library without a server or external service.
+
+## Features
+
+- Browser-local account creation and sign-in
+- Add, edit, search, filter, sort, and delete coding problems
+- Track platform, link, topic, difficulty, notes, and status
+- Mark problems solved or move them back to To do
+- Dashboard totals for solved problems, weekly progress, streak, and recent solved items
+- Intentional empty states for a new tracker
+- Light and dark themes
+- Responsive layout for desktop, tablet, and mobile screens
+- Confirmation before deletion and feedback after changes
+
+## Tech stack
+
+- React
+- Vite
+- Tailwind CSS
+- Lucide React
+- Web Crypto API for browser-side password hashing
+
+## How to run
+
+From the repository root, open PowerShell and run:
 
 ```powershell
 cd web-app/frontend
@@ -12,26 +36,37 @@ npm.cmd install
 npm.cmd run dev
 ```
 
-Open the local address Vite prints, usually `http://localhost:5173`. In PowerShell, use `npm.cmd` so you do not need to change the script execution policy.
+Open the local URL printed by Vite, usually `http://localhost:5173`.
 
-To make a production build:
+Create an account with a username and password of at least eight characters, then start adding problems.
+
+To create a production build:
 
 ```powershell
 npm.cmd run build
 ```
 
-## Using it
+## Data storage
 
-Create an account with a unique username and password, then add problems with a title, platform, optional URL, topic, difficulty, and notes. Search, filter, edit, delete, and mark problems solved from the tracker. The overview shows counts and recent solved work. Dark mode is available in the header.
+Accounts, the current session, theme preference, and problems are stored in the browser's `localStorage`. Data is not uploaded or synchronized between devices. Clearing site data removes the local tracker.
 
-## Data and privacy
+This local-first approach is intentionally simple for the current version and should not be used for sensitive production data.
 
-This simplified version runs entirely in the browser. Accounts and problems are saved in the browser's local storage; passwords are hashed before saving. Usernames are unique within that browser profile. There is no AI service, backend server, or API call required. Data does not sync to another device and will be lost if browser storage is cleared, so this is intended for a local personal demo rather than production accounts.
+## Project evolution
 
-## Original project
+The project began as the C++ command-line application in [Tracker.cpp](Tracker.cpp), which stores questions in [tracker_data.csv](tracker_data.csv) and is launched with [run_tracker.bat](run_tracker.bat). The React application in `web-app/frontend` is the browser-based evolution of that same preparation-tracking idea. The original CLI files remain functional at the repository root.
 
-The original C++ CLI implementation remains in `Tracker.cpp`; `run_tracker.bat` launches the existing Windows build. The full-stack experiment remains under `web-app/backend/` as historical project code, but the simplified browser app does not use or require it.
+## Screenshots
 
-## Stack
+Add current screenshots at these paths:
 
-React, Vite, Tailwind CSS, and Lucide icons. No external services or database are needed to run the browser app.
+- Dashboard: `docs/screenshots/dashboard.png`
+- Problem Tracker: `docs/screenshots/problem-tracker.png`
+- Analytics: `docs/screenshots/analytics.png`
+
+## Future improvements
+
+- Optional export and backup of local tracker data
+- Analytics based on saved problems and solving history
+- Spaced revision scheduling based on actual problem activity
+- Optional synchronization across devices
