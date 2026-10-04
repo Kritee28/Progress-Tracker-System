@@ -58,15 +58,17 @@ The project began as the C++ command-line application in [Tracker.cpp](Tracker.c
 
 ## Screenshots
 
-Add current screenshots at these paths:
+### Dashboard
+<!-- Add dashboard screenshot here -->
 
-- Dashboard: `docs/screenshots/dashboard.png`
-- Problem Tracker: `docs/screenshots/problem-tracker.png`
-- Analytics: `docs/screenshots/analytics.png`
+### Problem Tracker
+<!-- Add problem tracker screenshot here -->
+
+### Analytics
+<!-- Add analytics screenshot here -->
 
 ## Future improvements
 
-- Optional export and backup of local tracker data
-- Analytics based on saved problems and solving history
-- Spaced revision scheduling based on actual problem activity
-- Optional synchronization across devices
+- Cloud data synchronization
+- Backend persistence
+- Coding-platform integrations
