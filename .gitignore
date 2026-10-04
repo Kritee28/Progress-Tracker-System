@@ -1,0 +1,14 @@
+# Dependencies and build output
+node_modules/
+dist/
+
+# Local environment and logs
+.env
+.env.*
+*.log
+
+# Editor and operating-system files
+.vscode/*
+!.vscode/settings.json
+.DS_Store
+Thumbs.db
