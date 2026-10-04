@@ -4,71 +4,72 @@ Progress Tracker System is a React-based coding practice and progress tracking a
 
 ## Overview
 
-The app runs entirely in the browser. Each user can create a local account and maintain a personal problem library without a server or external service.
+The application helps students maintain a personal coding-problem library, record solving progress, and review preparation activity from a simple browser interface.
+
+The project started as a C++ CLI-based tracker and was later extended into a browser-based React application. The original CLI project remains preserved in the repository.
 
 ## Features
 
-- Browser-local account creation and sign-in
-- Add, edit, search, filter, sort, and delete coding problems
-- Track platform, link, topic, difficulty, notes, and status
-- Mark problems solved or move them back to To do
-- Dashboard totals for solved problems, weekly progress, streak, and recent solved items
-- Intentional empty states for a new tracker
-- Light and dark themes
-- Responsive layout for desktop, tablet, and mobile screens
-- Confirmation before deletion and feedback after changes
+- Add, edit, and delete coding problems
+- Mark problems as solved or unsolved
+- Search and filter problems
+- Track platform, topic, difficulty, links, notes, and status
+- Dashboard progress overview
+- Analytics and progress insights
+- Daily goals
+- Streak tracking
+- Revision tracking
+- Dark mode
+- Responsive interface for desktop and mobile
 
-## Tech stack
+## Tech Stack
 
 - React
 - Vite
 - Tailwind CSS
 - Lucide React
-- Web Crypto API for browser-side password hashing
+- LocalStorage
 
-## How to run
+## Data Storage
 
-From the repository root, open PowerShell and run:
+The current browser application stores user accounts, theme preferences, and coding-problem data in LocalStorage. No backend or database is required to run the application locally.
 
-```powershell
+## Project Structure
+
+```text
+Progress-Tracker-System/
+├── Tracker.cpp
+├── tracker_data.csv
+├── run_tracker.bat
+├── readme.md
+└── web-app/
+    └── frontend/
+```
+
+The original C++ CLI project is preserved at the repository root. The React browser application is located in `web-app/frontend`.
+
+## Running the Web App
+
+From the repository root, run:
+
+```bash
 cd web-app/frontend
-npm.cmd install
-npm.cmd run dev
+npm install
+npm run dev
 ```
 
-Open the local URL printed by Vite, usually `http://localhost:5173`.
-
-Create an account with a username and password of at least eight characters, then start adding problems.
-
-To create a production build:
-
-```powershell
-npm.cmd run build
-```
-
-## Data storage
-
-Accounts, the current session, theme preference, and problems are stored in the browser's `localStorage`. Data is not uploaded or synchronized between devices. Clearing site data removes the local tracker.
-
-This local-first approach is intentionally simple for the current version and should not be used for sensitive production data.
-
-## Project evolution
-
-The project began as the C++ command-line application in [Tracker.cpp](Tracker.cpp), which stores questions in [tracker_data.csv](tracker_data.csv) and is launched with [run_tracker.bat](run_tracker.bat). The React application in `web-app/frontend` is the browser-based evolution of that same preparation-tracking idea. The original CLI files remain functional at the repository root.
+Open the local URL printed by Vite in your browser.
 
 ## Screenshots
 
-### Dashboard
 ![Dashboard](image.png)
 
-### Problem Tracker
 ![Problem Tracker](image-1.png)
 
-### Analytics
-<!-- Add analytics screenshot here -->
+## Project Evolution
 
-## Future improvements
+```text
+C++ CLI → React browser application
+```
 
-- Cloud data synchronization
-- Backend persistence
-- Coding-platform integrations
+The project evolved from a terminal-based DSA tracker into a browser-based application while preserving the original C++ implementation and data files.
